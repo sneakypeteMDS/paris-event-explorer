@@ -35,7 +35,7 @@ SearchEngine.prototype.checkSearch = function (search) {
   var regexSearch = /[a-zA-Z-0-9-\/]+/;
 
   if (regexSearch.test(search)) {
-    // send to api request
+    this.jsonToEvents(this.doODPAPIRequest(search));
   }
 
   if (!regexSearch.test(search)) {
