@@ -1,15 +1,14 @@
 'use strict'
 
-
 /**
- *  Class SearchEngine 
+ *  Class SearchEngine: A class to manage API request with a search bar.  
  */
 var SearchEngine = function SearchEngine () {
   
 }
 
 /**
- * Init function
+ * This function add two event listener click and keypress to the searchbar.
  */
 SearchEngine.prototype.init = function () {
   var elClick = document.querySelector('#search-button');
@@ -29,21 +28,19 @@ SearchEngine.prototype.init = function () {
 }
 
 /**
- * Check Search Format
+ * This function check search format to launch it
+ * 0params {String} search
  */
 SearchEngine.prototype.checkSearch = function (search) {
-  var regexString = /[a-zA-Z]+/;
-  
-  if (regexString.test(search)) {
-    document.getElementById('search-info').innerHTML = 'la recherche a etait envoyee';
+  var regexSearch = /[a-zA-Z-0-9-\/]+/;
+
+  if (regexSearch.test(search) || regexDate.test(search)) {
+    // send to api request
   }
 
-  if (!regexString.test(search)) {
-    document.getElementById('search-info').innerHTML = "le format de recherche est incorrecte !";
+  if (!regexSearch.test(search)) {
+    document.getElementById('search-info').innerHTML = "Le format de recherche est incorrect! Seul les nombres, les lettres, '/' et '-' sont autorisés";
   }
-
-  // il faut aussi verifier le cas pour la date
-
 }
 
 SearchEngine.prototype.init();
