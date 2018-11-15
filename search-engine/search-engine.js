@@ -32,11 +32,18 @@ SearchEngine.prototype.init = function () {
  * Check Search Format
  */
 SearchEngine.prototype.checkSearch = function (search) {
-  var regexNumber = /^[0-9]*$/
+  var regexString = /[a-zA-Z]+/;
+  
+  if (regexString.test(search)) {
+    document.getElementById('search-info').innerHTML = 'la recherche a etait envoyee';
+  }
 
-  if (regexNumber.test(search)) {
-    document.getElementById('search-info').innerHTML = 'uniquement chaine de caractere';
-  } 
+  if (!regexString.test(search)) {
+    document.getElementById('search-info').innerHTML = "le format de recherche est incorrecte !";
+  }
+
+  // il faut aussi verifier le cas pour la date
+
 }
 
 SearchEngine.prototype.init();
