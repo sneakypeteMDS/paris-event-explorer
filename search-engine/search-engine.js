@@ -2,7 +2,7 @@
 
 /**
   * Request OpenDataParis API with params given and return API response
-  * @params {String requestParam}
+  * @params {String} requestParam
   * @return String or Boolean
   */
 function doODPAPIRequest(requestParam) {
