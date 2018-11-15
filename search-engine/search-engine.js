@@ -11,8 +11,8 @@ var SearchEngine = function SearchEngine () {
  * This function add two event listener click and keypress to the searchbar.
  */
 SearchEngine.prototype.init = function () {
-  var elClick = document.querySelector('#search-button');
-  var elSearchBar = document.querySelector('#searchbar');
+  var elClick = document.querySelector('#searchButton');
+  var elSearchBar = document.querySelector('#searchBar');
 
   elClick.addEventListener('click', function() {
     checkSearch(elSearchBar.value);
@@ -28,13 +28,13 @@ SearchEngine.prototype.init = function () {
 }
 
 /**
- * This function check search format to launch it
- * 0params {String} search
+ * This function check search format to launch it.
+ * 0params {String} search.
  */
 SearchEngine.prototype.checkSearch = function (search) {
   var regexSearch = /[a-zA-Z-0-9-\/]+/;
 
-  if (regexSearch.test(search) || regexDate.test(search)) {
+  if (regexSearch.test(search)) {
     // send to api request
   }
 
