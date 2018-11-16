@@ -1,8 +1,14 @@
 'use strict'
+
 var btnclick = document.querySelector('#map-button');
 btnclick.addEventListener('click',function(events){
 initMap(events)
 });
+
+/**
+Allow to set multiple markers on different locations
+*param : events 
+*/
 function initMap(events) {
 var map = new google.maps.Map(document.querySelector('#map'), {
           zoom: 12,
@@ -15,7 +21,13 @@ var map = new google.maps.Map(document.querySelector('#map'), {
   addMarker(geocoder,address,marker,map);
 }
 
-
+/**
+Allow to set multiple markers on different locations
+*param : geocoder 
+*param : event
+*param : marker
+*param : map
+*/
 function addMarker(geocoder,address,marker,map) {
   for (var i = 0; i < address.length; i++) {
     geocoder.geocode({'address': address[i]}, function(results,status) {
