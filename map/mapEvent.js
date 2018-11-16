@@ -1,4 +1,8 @@
 'use strict'
+var btnclick = document.querySelector('#map-button');
+btnclick.addEventListener('click',function(events){
+initMap(events)
+});
 function initMap(events) {
 var map = new google.maps.Map(document.querySelector('#map'), {
           zoom: 12,
@@ -8,7 +12,7 @@ var map = new google.maps.Map(document.querySelector('#map'), {
   var geocoder = new google.maps.Geocoder();
   var address = ['17 avenue d\'Iéna, 75116 Paris','15 rue Marsoulan 75012 PARIS'];
   var marker = [];
-  codeAddress(geocoder,address,marker,map);
+  addMarker(geocoder,address,marker,map);
 }
 
 
