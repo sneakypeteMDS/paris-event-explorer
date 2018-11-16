@@ -1,9 +1,8 @@
 
 'use strict'
-/*
-  *
-  *
-  */   
+/**
+  *Display the map by pressing the button
+  */ 
 var btnclick = document.querySelector('#maps-button');
 btnclick.addEventListener('click',initMap);
 
@@ -37,9 +36,8 @@ events.push(event2);
 events.push(event3);
 events.push(event4);
 /**
-Allow to set multiple markers on different locations
-*param : events 
-*/
+  * Allow to show the map
+  */
 function initMap() {
 
 var map = new google.maps.Map(document.querySelector('#map'), {
@@ -55,12 +53,12 @@ marker += addMarker(geocoder,event,marker,map);
 }
 
 /**
-Allow to set multiple markers on different locations
-*param : geocoder 
-*param : event
-*param : marker
-*param : map
-*/
+  Allow to set multiple markers on different locations
+  *param : geocoder Allow to translate latitude and longitude of the address
+  *param : event An event of events
+  *param : marker
+  *param : map
+  */
 function addMarker(geocoder,event,marker,map) {
   geocoder.geocode({'address': event.address}, function(results,status) {
    marker = new google.maps.Marker({
@@ -72,8 +70,8 @@ function addMarker(geocoder,event,marker,map) {
             '</div>'+
             '<h1 id="firstHeading" class="firstHeading">'+event.title+'</h1>'+
             '<div id="bodyContent">'+
-            '<p>'+event.description+'</p>'+
-            '<p>'+event.price+'</p>'+
+            '<p>Description : '+event.description+'</p>'+
+            '<p>Prix :'+event.price+'</p>'+
             '<p>'+event.address+'</p>'+
             '</div>'+
             '</div>';
@@ -86,4 +84,5 @@ function addMarker(geocoder,event,marker,map) {
   });
 
  }
-)}
+);
+}
