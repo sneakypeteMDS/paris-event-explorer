@@ -3,38 +3,7 @@
 /**
   *Display the map by pressing the button
   */ 
-var btnclick = document.querySelector('#maps-button');
-btnclick.addEventListener('click',initMap);
 
-var events = [];
-var event1 = {
- title : 'test1', 
- description : 'defeznjfnczl',
- price : '24e',
- address: '4 place Jussieu 75005 Paris'
-};
-var event2 = {
-title : 'test2', 
-description : 'defeznjfnczl',
- price : '24e',
-address: '10/12 rue des Lyonnais, 75005 Paris'
-};
-var event3 = {
-  title : 'test3', 
-  description : 'defeznjfnczl',
-  price : '24e',
-  address: '123 rue Saint Martin, 75004 Paris'
-};
-var event4 = {
-  title : 'test4', 
-  description : 'defeznjfnczl',
-  price : '24e',
-  address: '123 rue Saint Martin, 75004 Paris'
-};
-events.push(event1);
-events.push(event2);
-events.push(event3);
-events.push(event4);
 /**
   * Allow to show the map
   */
@@ -86,3 +55,6 @@ function addMarker(geocoder,event,marker,map) {
  }
 );
 }
+
+var btnclick = document.querySelector('#maps-button');
+btnclick.addEventListener('click',initMap);
