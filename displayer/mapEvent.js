@@ -29,6 +29,7 @@ Allow to set multiple markers on different locations
 *param : events 
 */
 function initMap() {
+
 var map = new google.maps.Map(document.querySelector('#map'), {
      zoom: 12,
      center: {lat: 48.866667, lng: 2.333333}
